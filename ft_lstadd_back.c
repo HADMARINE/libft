@@ -6,7 +6,7 @@
 /*   By: lhojoon <lhojoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 14:43:19 by lhojoon           #+#    #+#             */
-/*   Updated: 2023/11/10 15:22:08 by lhojoon          ###   ########.fr       */
+/*   Updated: 2023/11/15 14:30:13 by lhojoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		*lst = new;
 		return ;
 	}
-	while ((*lst)->next)
-		(*lst) = lp->next;
-	(*lst)->next = new;
-	*lst = lp;
+	lp = ft_lstlast(*lst);
+	lp->next = new;
 }
