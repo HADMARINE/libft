@@ -6,7 +6,7 @@
 #    By: lhojoon <lhojoon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/15 11:49:07 by lhojoon           #+#    #+#              #
-#    Updated: 2023/11/28 15:11:10 by lhojoon          ###   ########.fr        #
+#    Updated: 2023/11/28 15:47:19 by lhojoon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,7 +63,8 @@ SRCB =	./ft_lstnew.c \
 		./puthexadecimal.c \
 		./utoa.c \
 		./get_next_line.c \
-		./get_next_line_utils.c
+		./get_next_line_utils.c \
+		./ft_stack.c
 OBJS = $(SRCS:c=o)
 OBJB = $(SRCB:c=o)
 INCLUDES = ./
