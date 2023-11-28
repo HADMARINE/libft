@@ -6,7 +6,7 @@
 #    By: lhojoon <lhojoon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/15 11:49:07 by lhojoon           #+#    #+#              #
-#    Updated: 2023/11/15 11:49:10 by lhojoon          ###   ########.fr        #
+#    Updated: 2023/11/28 15:11:10 by lhojoon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,15 +54,25 @@ SRCB =	./ft_lstnew.c \
 		./ft_lstdelone.c \
 		./ft_lstclear.c \
 		./ft_lstiter.c \
-		./ft_lstmap.c
+		./ft_lstmap.c \
+		./counter.c \
+		./ft_printf.c \
+		./implementations.c \
+		./implementations2.c \
+		./parser.c \
+		./puthexadecimal.c \
+		./utoa.c \
+		./get_next_line.c \
+		./get_next_line_utils.c
 OBJS = $(SRCS:c=o)
 OBJB = $(SRCB:c=o)
 INCLUDES = ./
 NAME = libft.a
 
-all: $(OBJS) $(NAME)
+# all: $(OBJS) $(NAME)
+all: $(OBJS) $(OBJB) $(NAME)
 $(NAME):
-	ar rcs $(NAME) $(OBJS)
+	ar rcs $(NAME) $(OBJS) $(OBJB)
 clean:
 	rm $(OBJS) $(OBJB) -f
 fclean: clean

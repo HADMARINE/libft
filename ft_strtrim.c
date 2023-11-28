@@ -6,7 +6,7 @@
 /*   By: lhojoon <lhojoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 17:59:43 by lhojoon           #+#    #+#             */
-/*   Updated: 2023/11/10 11:51:14 by lhojoon          ###   ########.fr       */
+/*   Updated: 2023/11/16 11:23:24 by lhojoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		if (contains(*start, set) == 0)
 			break ;
 		start++;
-	}		
+	}
 	while (contains(*end, set) == 1 && start != end)
 		end--;
 	if (end - start < 0)

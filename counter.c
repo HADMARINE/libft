@@ -1,19 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   counter.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lhojoon <lhojoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 15:50:50 by lhojoon           #+#    #+#             */
-/*   Updated: 2023/11/08 15:52:41 by lhojoon          ###   ########.fr       */
+/*   Created: 2023/11/16 22:57:35 by lhojoon           #+#    #+#             */
+/*   Updated: 2023/11/28 15:06:50 by lhojoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
+int	counter(const char *str)
 {
-	ft_putstr_fd(s, fd);
-	ft_putchar_fd('\n', fd);
+	char			*sp;
+	char			tmpch;
+	unsigned int	len;
+
+	len = 0;
+	sp = (char *)str;
+	while (*sp)
+	{
+		if (*sp == '%' && *(sp + 1))
+		{
+			tmpch = *ft_strchr("cspdiuxX%", *(sp + 1));
+			if (tmpch != '\0')
+			{
+				sp++;
+				len++;
+			}
+		}
+		sp++;
+	}
+	return (len);
 }

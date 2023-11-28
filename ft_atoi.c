@@ -6,7 +6,7 @@
 /*   By: lhojoon <lhojoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 15:14:47 by lhojoon           #+#    #+#             */
-/*   Updated: 2023/11/10 11:52:34 by lhojoon          ###   ########.fr       */
+/*   Updated: 2023/11/16 11:23:11 by lhojoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_atoi(const char *str)
 	minus = 0;
 	num = 0;
 	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
-			i++;
+		i++;
 	if (str[i] == '-')
 	{
 		i++;

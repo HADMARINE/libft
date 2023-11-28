@@ -1,19 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   implementations2.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lhojoon <lhojoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 15:50:50 by lhojoon           #+#    #+#             */
-/*   Updated: 2023/11/08 15:52:41 by lhojoon          ###   ########.fr       */
+/*   Created: 2023/11/13 17:41:09 by lhojoon           #+#    #+#             */
+/*   Updated: 2023/11/28 15:07:37 by lhojoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
+int	puthexadecimal(unsigned int v, short maj);
+
+int	x_exec(va_list *valist)
 {
-	ft_putstr_fd(s, fd);
-	ft_putchar_fd('\n', fd);
+	unsigned int	v;
+
+	v = va_arg(*valist, unsigned long);
+	return (puthexadecimal(v, 0));
+}
+
+int	xmaj_exec(va_list *valist)
+{
+	unsigned int	v;
+
+	v = va_arg(*valist, unsigned long);
+	return (puthexadecimal(v, 1));
+}
+
+int	percent_exec(va_list *valist)
+{
+	(void)valist;
+	ft_putchar_fd('%', 1);
+	return (1);
 }

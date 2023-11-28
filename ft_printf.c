@@ -1,19 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lhojoon <lhojoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 15:50:50 by lhojoon           #+#    #+#             */
-/*   Updated: 2023/11/08 15:52:41 by lhojoon          ###   ########.fr       */
+/*   Created: 2023/11/13 13:44:52 by lhojoon           #+#    #+#             */
+/*   Updated: 2023/11/28 15:07:06 by lhojoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
+int	parser(const char *str, va_list *valist);
+int	counter(const char *str);
+
+int	ft_printf(const char *str, ...)
 {
-	ft_putstr_fd(s, fd);
-	ft_putchar_fd('\n', fd);
+	va_list	valist;
+	int		len;
+
+	va_start(valist, str);
+	len = parser(str, &valist);
+	va_end(valist);
+	return (len);
 }
