@@ -6,7 +6,7 @@
 /*   By: lhojoon <lhojoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 16:54:25 by lhojoon           #+#    #+#             */
-/*   Updated: 2024/02/12 11:54:24 by lhojoon          ###   ########.fr       */
+/*   Updated: 2024/02/12 17:22:50 by lhojoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,5 +80,6 @@ int		ft_absi(int v);
 long	ft_absl(long v);
 void	ft_lstswap(t_list *a, t_list *b);
 char	*ft_strjoin_many(int num, ...);
+void	ft_freesplit(char **split);
 
 #endif
