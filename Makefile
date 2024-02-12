@@ -6,9 +6,12 @@
 #    By: lhojoon <lhojoon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/15 11:49:07 by lhojoon           #+#    #+#              #
-#    Updated: 2024/02/05 18:48:33 by lhojoon          ###   ########.fr        #
+#    Updated: 2024/02/12 11:50:09 by lhojoon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+
+VERSION = 1.0.0
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
@@ -67,7 +70,8 @@ SRCB =	./ft_lstnew.c \
 		./ft_stack.c \
 		./ft_abs.c \
 		./ft_lstswap.c \
-		./ft_lstget_idx.c 
+		./ft_lstget_idx.c \
+		./ft_strjoin_many.c
 OBJS = $(SRCS:c=o)
 OBJB = $(SRCB:c=o)
 INCLUDES = ./
@@ -84,5 +88,7 @@ fclean: clean
 re: fclean all
 bonus: $(OBJS) $(OBJB)
 	ar rcs $(NAME) $(OBJS) $(OBJB)
+version:
+	@echo $(VERSION)
 %.o: %.c
 	$(CC) -c -o $@ $< $(CFLAGS) -I $(INCLUDES)
