@@ -6,12 +6,12 @@
 #    By: lhojoon <lhojoon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/15 11:49:07 by lhojoon           #+#    #+#              #
-#    Updated: 2024/02/12 17:22:37 by lhojoon          ###   ########.fr        #
+#    Updated: 2024/02/27 21:52:14 by lhojoon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-VERSION = 1.0.0
+VERSION = 1.0.1
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
@@ -48,8 +48,8 @@ SRCS = ./ft_putnbr_fd.c \
 		./ft_substr.c \
 		./ft_tolower.c \
 		./ft_toupper.c  \
-		./ft_strlcat.c
-SRCB =	./ft_lstnew.c \
+		./ft_strlcat.c \
+		./ft_lstnew.c \
 		./ft_lstadd_front.c \
 		./ft_lstsize.c \
 		./ft_lstlast.c \
@@ -74,21 +74,17 @@ SRCB =	./ft_lstnew.c \
 		./ft_strjoin_many.c \
 		./ft_freesplit.c
 OBJS = $(SRCS:c=o)
-OBJB = $(SRCB:c=o)
 INCLUDES = ./
 NAME = libft.a
 
-# all: $(OBJS) $(NAME)
-all: $(OBJS) $(OBJB) $(NAME)
+all: $(OBJS) $(NAME)
 $(NAME):
-	ar rcs $(NAME) $(OBJS) $(OBJB)
+	ar rcs $(NAME) $(OBJS)
 clean:
-	rm $(OBJS) $(OBJB) -f
+	rm $(OBJS) -f
 fclean: clean
 	rm $(NAME) -f
 re: fclean all
-bonus: $(OBJS) $(OBJB)
-	ar rcs $(NAME) $(OBJS) $(OBJB)
 version:
 	@echo $(VERSION)
 %.o: %.c
